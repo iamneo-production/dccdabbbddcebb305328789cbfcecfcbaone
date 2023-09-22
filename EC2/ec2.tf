@@ -7,4 +7,12 @@ provider "aws" {
 resource "aws_instance" "ex" {
     ami           = ""
     instance_type = "t2.micro"
+
+    tags = {
+        Name = ""
+    }
+}
+
+output "public_ip" {
+    value = aws_instance.ex.public_ip
 }
